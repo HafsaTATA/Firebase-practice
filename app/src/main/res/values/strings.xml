@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">TP 3</string>
+    <string name="open">Open Navigation Drawer</string>
+    <string name="close">Close Navigation Drawer</string>
+    <string name="default_web_client_id" translatable="false">241506455876-78pvk3sf9fla41khoqcqsj3or4uuuf20.apps.googleusercontent.com</string>
+</resources>

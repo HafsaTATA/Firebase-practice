@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_standard"
+        android:title="Standard" />
+    <item
+        android:id="@+id/menu_scientific"
+        android:title="Scientific" />
+    <item
+        android:id="@+id/menu_temperature"
+        android:title="Temperature" />
+    <item
+        android:id="@+id/menu_graphing"
+        android:title="Graphing" />
+    <item
+        android:id="@+id/menu_programmer"
+        android:title="Programmer" />
+</menu>

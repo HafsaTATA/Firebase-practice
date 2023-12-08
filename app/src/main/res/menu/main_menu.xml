@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/home"
+            android:icon="@drawable/baseline_home_24"
+            android:title="Home"></item>
+        <item android:id="@+id/calculator"
+            android:icon="@drawable/baseline_calculate_24"
+            android:title="Calculator"></item>
+        <item android:id="@+id/dictionary"
+                android:icon="@drawable/baseline_menu_book_24"
+                android:title="Dictionary"></item>
+        <item android:id="@+id/chat"
+            android:icon="@drawable/baseline_chat_24"
+            android:title="Chat"></item>
+    </group>
+
+    <item android:title="Profile">
+        <menu>
+            <group>
+                <item android:id="@+id/login"
+                    android:icon="@drawable/baseline_login_24"
+                    android:title="Login"></item>
+                <item android:id="@+id/logout"
+                    android:icon="@drawable/baseline_logout_24"
+                    android:title="Logout"></item>
+                <item android:id="@+id/google_map"
+                android:icon="@drawable/baseline_map_24"
+                android:title="Google Map"></item>
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Communicate">
+        <menu>
+            <group>
+                <item android:id="@+id/share"
+                    android:icon="@drawable/baseline_share_24"
+                    android:title="Share"></item>
+                <item android:id="@+id/rateUs"
+                    android:icon="@drawable/baseline_rate_review_24"
+                    android:title="Rate Us"></item>
+            </group>
+        </menu>
+    </item>
+
+</menu>
