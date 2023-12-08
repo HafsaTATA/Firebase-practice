@@ -17,6 +17,9 @@
         tools:targetApi="31">
         <meta-data android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCrzW-QU9VHiEleWuZwF-lEBPYA2vZPuvw"></meta-data>
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
         <activity
             android:name=".GoogleMapActivity"
             android:exported="false" />

@@ -57,7 +57,7 @@ public class FirebaseAuthentification extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PerforLofin();
+                PerformLogin();
                 }
         });
         createNewAccount.setOnClickListener(new View.OnClickListener() {
@@ -83,37 +83,33 @@ public class FirebaseAuthentification extends AppCompatActivity {
 
     }
 
-    private void PerforLofin() {
+    private void PerformLogin() {
         String email = inputEmail.getText().toString();
         String password = inputPassword.getText().toString();
+        if (password.isEmpty() || email.isEmpty()) {
+            Toast.makeText(FirebaseAuthentification.this, "Enter all fields" , Toast.LENGTH_SHORT).show();
+        } else {
 
-        if (!email.matches(emailPattern)){
-
-            inputEmail.setError("Enter Connext Email");
-        }else if(password.isEmpty() || password.length()<6) {
-
-            inputPassword.setError("Enter Proper Password");
-        }else {
-            progressDialog.setMessage("Pease Wail While Login...");
+            progressDialog.setMessage("Please Wait While Login...");
             progressDialog.setTitle("Login");
             progressDialog.setCanceledOnTouchOutside(false);
             progressDialog.show();
-
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
+                    if (task.isSuccessful()) {
                         progressDialog.dismiss();
                         SendUserToNextActivity();
-                        Toast.makeText(FirebaseAuthentification.this,"Login Successful", Toast.LENGTH_SHORT).show();
-                    }else{
+                        Toast.makeText(FirebaseAuthentification.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                    } else {
                         progressDialog.dismiss();
-                        Toast.makeText(FirebaseAuthentification.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FirebaseAuthentification.this, "" + task.getException(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
         }
     }
+
 
     private void SendUserToNextActivity() {
         Intent intent=new Intent(FirebaseAuthentification.this, MainActivity.class);

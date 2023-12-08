@@ -42,14 +42,6 @@ public class activity_register extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
-        alreadyHaveAccount= findViewById(R.id.alreadyHaveAccount);
-        alreadyHaveAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(activity_register.this, FirebaseAuthentification.class));
-            }
-        });
-
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,10 +58,10 @@ public class activity_register extends AppCompatActivity {
 
         if (!email.matches(emailPattern)){
 
-            inputEmail.setError("Enter Connext Email");
+            inputEmail.setError("Enter a valid Email");
         }else if(password.isEmpty() || password.length()<6) {
 
-            inputPassword.setError("Enter Proper Password");
+            inputPassword.setError("Enter at least 6 characters");
 
         }else if (!password.equals(confirmPassword)){
 

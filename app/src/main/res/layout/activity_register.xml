@@ -9,23 +9,21 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
         android:layout_width="189dp"
-        android:layout_height="160dp"
-        android:src="@drawable/logo"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
+        android:layout_height="165dp"
+        android:src="@drawable/yoga"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.093" />
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginTop="40dp"/>
 
     <EditText
         android:id="@+id/inputEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/baseline_email_24"
@@ -99,15 +97,4 @@
         app:layout_constraintStart_toStartOf="@+id/inputPassword"
         app:layout_constraintTop_toBottomOf="@+id/inputConfirmPassword" />
 
-    <TextView
-        android:id="@+id/alreadyHaveAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Already Have Account ?"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/btnRegister"
-        app:layout_constraintStart_toStartOf="@+id/btnRegister"
-        app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
 </androidx.constraintlayout.widget.ConstraintLayout>

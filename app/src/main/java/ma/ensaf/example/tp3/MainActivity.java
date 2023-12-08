@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -82,11 +84,36 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 } else if (itemId == R.id.logout) {
-                    if (mAuth.getCurrentUser() != null) {
-                        mAuth.signOut();
 
-                        Intent intent = new Intent(MainActivity.this, FirebaseAuthentification.class);
-                        startActivity(intent);
+                    if (mAuth.getCurrentUser() != null) {
+                        // Build the AlertDialog
+                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                        builder.setTitle("Logout Confirmation");
+                        builder.setMessage("Are you sure you want to log out?");
+
+                        // Set up the buttons
+                        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // User clicked Yes, proceed with logout
+                                mAuth.signOut();
+                                Intent intent = new Intent(MainActivity.this, FirebaseAuthentification.class);
+                                startActivity(intent);
+                                dialog.dismiss();  // Dismiss the dialog
+                            }
+                        });
+
+                        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // User clicked No, dismiss the dialog
+                                dialog.dismiss();
+                            }
+                        });
+
+                        // Create and show the AlertDialog
+                        AlertDialog alertDialog = builder.create();
+                        alertDialog.show();
                     }
                     return true;
                 } else if (itemId == R.id.share) {
