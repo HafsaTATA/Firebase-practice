@@ -21,7 +21,7 @@ public class GoogleMapActivity extends AppCompatActivity implements OnMapReadyCa
         setContentView(R.layout.activity_google_map);
 
 
-        SupportMapFragment mapFragment= (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.maps);
+        SupportMapFragment mapFragment= (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
 
@@ -79,5 +79,9 @@ public class GoogleMapActivity extends AppCompatActivity implements OnMapReadyCa
         LatLng ensaBerrechid = new LatLng(33.25889494589365, -7.5839708040205345);
         Marker markerBerrechid = googleMap.addMarker(new MarkerOptions().position(ensaBerrechid).title("ENSA Berrechid"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ensaBerrechid, 10));
+
+        LatLng initialPosition = new LatLng(33.99666584009761, -4.991943719090541);
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(initialPosition, 6));
     }
+
 }

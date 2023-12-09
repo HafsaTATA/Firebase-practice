@@ -28,7 +28,7 @@ import com.google.firebase.auth.GoogleAuthCredential;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class FirebaseAuthentification extends AppCompatActivity {
-    private TextView textView;
+    private TextView textView,fbbutton;
     TextView createNewAccount;
     EditText inputEmail, inputPassword;
     Button btnLogin;
@@ -50,6 +50,8 @@ public class FirebaseAuthentification extends AppCompatActivity {
         inputPassword = findViewById(R.id.inputPassword);
 
         btnLogin = findViewById(R.id.btnLogin);
+        fbbutton=findViewById(R.id.signInWithFacebook);
+
         progressDialog= new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
@@ -59,6 +61,13 @@ public class FirebaseAuthentification extends AppCompatActivity {
             public void onClick(View v) {
                 PerformLogin();
                 }
+        });
+
+        fbbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SendUserToNextActivity();
+            }
         });
         createNewAccount.setOnClickListener(new View.OnClickListener() {
             @Override

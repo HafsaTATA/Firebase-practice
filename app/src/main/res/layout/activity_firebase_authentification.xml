@@ -21,12 +21,13 @@
 
     <TextView
         android:id="@+id/signInWithGoogle"
-        android:layout_width="310dp"
-        android:layout_height="48dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
         android:background="@drawable/rectangle"
         android:gravity="center"
         android:text="Sign in with Google"
         android:textSize="18dp"
+        android:layout_marginTop="20dp"
         android:layout_marginHorizontal="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +39,7 @@
     <TextView
         android:id="@+id/signInWithFacebook"
         android:layout_width="310dp"
-        android:layout_height="48dp"
+        android:layout_height="40dp"
         android:layout_marginHorizontal="30dp"
         android:background="@drawable/rectangle_facebook"
         android:drawableStart="@drawable/fb"
@@ -147,9 +148,9 @@
         android:layout_marginStart="35dp"
         android:text="Create New Account?"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="17dp"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.188"
         app:layout_constraintStart_toStartOf="@+id/btnLogin"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
